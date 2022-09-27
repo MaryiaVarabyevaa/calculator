@@ -11,11 +11,8 @@ function App() {
   const [result, setResult] = useState('');
   const lastElem = result[result.length - 1];
   const handleClick = (e) => { 
-    if(result.length === 1 && result[0] === "0") {
-      if(parseInt(e.target.name)) {
+    if(result.length === 1 && result[0] === "0" && ~parseInt(e.target.name)) {
         setResult(e.target.name);
-      }
-      setResult(result.concat(e.target.name));
     } else {
       setResult(result.concat(e.target.name));
     }
